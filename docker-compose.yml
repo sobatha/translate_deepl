@@ -9,8 +9,10 @@ services:
   back:
     build: 
       context: back
+      dockerfile: Dockerfile
     ports:
-      - 5174:5000
+      - 5174:5174
     volumes:
-      - .:/app
+      - ./back:/usr/src/app
     tty: true
+    
