@@ -1,6 +1,12 @@
 from typing import Union
-
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from fastapi import FastAPI
+
+
+class Settings(BaseSettings):
+    auth_key: str
+    model_config = SettingsConfigDict(env_file=".env")
+
 
 app = FastAPI()
 
